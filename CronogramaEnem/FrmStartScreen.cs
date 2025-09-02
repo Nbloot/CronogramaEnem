@@ -15,7 +15,7 @@ namespace CronogramaEnem
 {
     public partial class FrmStartScreen : Form
     {
-        private string connectionString = @"Data Source=SQLEXPRESS;Initial Catalog=CJ3028186PR2;User Id=aluno;Password=aluno;";
+        string connectionString = @"Server=localhost\SQLEXPRESS;Database=clientes;User Id=aluno;Password=aluno;";
         public FrmStartScreen()
         {
             InitializeComponent();
@@ -28,26 +28,22 @@ namespace CronogramaEnem
             {
                 try
                 {
-                    conn.Open();
-                    
+                    string query = "SELECT * FROM clientes";
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string nome = reader["Nome"].ToString();
+                            MessageBox.Show("Cliente: " + nome);
+                        }
+                    }
+
                 }
                 catch (Exception ex)
                 {
-                    string deEmail = "bloot.nicolas@aluno.ifsp.edu.br";
-                    string senha = "mgdm xpzd eidg lyxu";
-                    string paraEmail = "bloot.nicolas@aluno.ifsp.edu.br";
-
-                    MailMessage mail = new MailMessage();
-                    mail.From = new MailAddress(deEmail);
-                    mail.To.Add(paraEmail);
-                    mail.Subject = "Erro de Conexão - CronogramaEnem";
-                    mail.Body = "O programa não conseguiu se conectar ao banco de dados.\n\nErro:\n" + ex.Message;
-
-                    SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587); 
-                    smtp.Credentials = new NetworkCredential(deEmail, senha);
-                    smtp.EnableSsl = true;
-                    BtnStart.Enabled = false;
-                    
+                    MessageBox.Show("❌ Erro na conexão: " + ex.Message);
+                    Application.Exit();
                 }
             }
             
@@ -68,4 +64,3 @@ namespace CronogramaEnem
         
     }
 }
-
