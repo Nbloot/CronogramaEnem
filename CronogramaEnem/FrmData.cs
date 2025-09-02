@@ -21,5 +21,15 @@ namespace CronogramaEnem
         {
 
         }
+
+        private void CmbDay_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MtbYear_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
     }
 }

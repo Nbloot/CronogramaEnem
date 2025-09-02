@@ -10,12 +10,13 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Win32.SafeHandles;
 
 namespace CronogramaEnem
 {
     public partial class FrmStartScreen : Form
     {
-        string connectionString = @"Server=localhost\SQLEXPRESS;Database=clientes;User Id=aluno;Password=aluno;";
+        string connectionString = @"Server=sqlexpress;Database=CJ3028186PR2;User Id=aluno;Password=aluno;";
         public FrmStartScreen()
         {
             InitializeComponent();
@@ -26,18 +27,10 @@ namespace CronogramaEnem
             
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
+                
                 try
                 {
-                    string query = "SELECT * FROM clientes";
-                    using (SqlCommand cmd = new SqlCommand(query, conn))
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            string nome = reader["Nome"].ToString();
-                            MessageBox.Show("Cliente: " + nome);
-                        }
-                    }
+                    conn.Open();
 
                 }
                 catch (Exception ex)

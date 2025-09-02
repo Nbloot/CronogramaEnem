@@ -38,7 +38,6 @@
             this.LblBirth = new System.Windows.Forms.Label();
             this.MtbBirth = new System.Windows.Forms.MaskedTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.BtnTest = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,6 +68,7 @@
             this.TxbName.Name = "TxbName";
             this.TxbName.Size = new System.Drawing.Size(100, 20);
             this.TxbName.TabIndex = 2;
+            this.TxbName.TextChanged += new System.EventHandler(this.TxbName_TextChanged);
             // 
             // LblCPF
             // 
@@ -87,6 +87,7 @@
             this.MtbCPF.Name = "MtbCPF";
             this.MtbCPF.Size = new System.Drawing.Size(100, 20);
             this.MtbCPF.TabIndex = 4;
+            this.MtbCPF.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.MtbCPF_MaskInputRejected);
             // 
             // LblNumber
             // 
@@ -105,6 +106,7 @@
             this.MtbNumber.Name = "MtbNumber";
             this.MtbNumber.Size = new System.Drawing.Size(100, 20);
             this.MtbNumber.TabIndex = 6;
+            this.MtbNumber.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.MtbNumber_MaskInputRejected);
             // 
             // LblBirth
             // 
@@ -124,6 +126,7 @@
             this.MtbBirth.Size = new System.Drawing.Size(100, 20);
             this.MtbBirth.TabIndex = 8;
             this.MtbBirth.ValidatingType = typeof(System.DateTime);
+            this.MtbBirth.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.MtbBirth_MaskInputRejected);
             // 
             // pictureBox1
             // 
@@ -136,23 +139,11 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // BtnTest
-            // 
-            this.BtnTest.BackColor = System.Drawing.SystemColors.Control;
-            this.BtnTest.Location = new System.Drawing.Point(12, 415);
-            this.BtnTest.Name = "BtnTest";
-            this.BtnTest.Size = new System.Drawing.Size(100, 23);
-            this.BtnTest.TabIndex = 12;
-            this.BtnTest.Text = "Testar Conexão";
-            this.BtnTest.UseVisualStyleBackColor = false;
-            this.BtnTest.Click += new System.EventHandler(this.BtnTest_Click);
-            // 
             // FrmRegistration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.BtnTest);
             this.Controls.Add(this.MtbBirth);
             this.Controls.Add(this.LblBirth);
             this.Controls.Add(this.MtbNumber);
@@ -185,6 +176,5 @@
         private System.Windows.Forms.Label LblBirth;
         private System.Windows.Forms.MaskedTextBox MtbBirth;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button BtnTest;
     }
 }

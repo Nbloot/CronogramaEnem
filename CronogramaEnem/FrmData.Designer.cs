@@ -30,10 +30,11 @@
         {
             this.Pbx3 = new System.Windows.Forms.PictureBox();
             this.LblYear = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.MtbYear = new System.Windows.Forms.MaskedTextBox();
             this.LblIntroduction = new System.Windows.Forms.Label();
-            this.LblDate = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.LblDay = new System.Windows.Forms.Label();
+            this.CmbDay = new System.Windows.Forms.ComboBox();
+            this.BtnSalvar2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Pbx3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,13 +59,14 @@
             this.LblYear.TabIndex = 13;
             this.LblYear.Text = "Para qual ano do Enem você quer estudar?";
             // 
-            // maskedTextBox1
+            // MtbYear
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(45, 150);
-            this.maskedTextBox1.Mask = "0 0 0 0";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox1.TabIndex = 14;
+            this.MtbYear.Location = new System.Drawing.Point(45, 150);
+            this.MtbYear.Mask = "0000";
+            this.MtbYear.Name = "MtbYear";
+            this.MtbYear.Size = new System.Drawing.Size(100, 20);
+            this.MtbYear.TabIndex = 14;
+            this.MtbYear.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.MtbYear_MaskInputRejected);
             // 
             // LblIntroduction
             // 
@@ -78,21 +80,21 @@
             this.LblIntroduction.Text = "Para criarmos sua rotina, precisamos de algumas informações sobre sua disponibili" +
     "dade e datas.";
             // 
-            // LblDate
+            // LblDay
             // 
-            this.LblDate.AutoSize = true;
-            this.LblDate.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.LblDate.Font = new System.Drawing.Font("Reem Kufi", 9.75F);
-            this.LblDate.Location = new System.Drawing.Point(45, 227);
-            this.LblDate.Name = "LblDate";
-            this.LblDate.Size = new System.Drawing.Size(337, 23);
-            this.LblDate.TabIndex = 16;
-            this.LblDate.Text = "Quantos dias na semana você quer estudar para o enem?";
+            this.LblDay.AutoSize = true;
+            this.LblDay.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.LblDay.Font = new System.Drawing.Font("Reem Kufi", 9.75F);
+            this.LblDay.Location = new System.Drawing.Point(45, 227);
+            this.LblDay.Name = "LblDay";
+            this.LblDay.Size = new System.Drawing.Size(337, 23);
+            this.LblDay.TabIndex = 16;
+            this.LblDay.Text = "Quantos dias na semana você quer estudar para o enem?";
             // 
-            // comboBox1
+            // CmbDay
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.CmbDay.FormattingEnabled = true;
+            this.CmbDay.Items.AddRange(new object[] {
             "1 dia",
             "2 dias",
             "3 dias",
@@ -100,20 +102,31 @@
             "5 dias",
             "6 dias",
             "7 dias"});
-            this.comboBox1.Location = new System.Drawing.Point(45, 275);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 18;
+            this.CmbDay.Location = new System.Drawing.Point(45, 275);
+            this.CmbDay.Name = "CmbDay";
+            this.CmbDay.Size = new System.Drawing.Size(121, 21);
+            this.CmbDay.TabIndex = 18;
+            this.CmbDay.SelectedIndexChanged += new System.EventHandler(this.CmbDay_SelectedIndexChanged);
+            // 
+            // BtnSalvar2
+            // 
+            this.BtnSalvar2.Location = new System.Drawing.Point(667, 396);
+            this.BtnSalvar2.Name = "BtnSalvar2";
+            this.BtnSalvar2.Size = new System.Drawing.Size(75, 23);
+            this.BtnSalvar2.TabIndex = 19;
+            this.BtnSalvar2.Text = "Salvar";
+            this.BtnSalvar2.UseVisualStyleBackColor = true;
             // 
             // FrmData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.LblDate);
+            this.Controls.Add(this.BtnSalvar2);
+            this.Controls.Add(this.CmbDay);
+            this.Controls.Add(this.LblDay);
             this.Controls.Add(this.LblIntroduction);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.MtbYear);
             this.Controls.Add(this.LblYear);
             this.Controls.Add(this.Pbx3);
             this.Name = "FrmData";
@@ -128,9 +141,10 @@
 
         private System.Windows.Forms.PictureBox Pbx3;
         private System.Windows.Forms.Label LblYear;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox MtbYear;
         private System.Windows.Forms.Label LblIntroduction;
-        private System.Windows.Forms.Label LblDate;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label LblDay;
+        private System.Windows.Forms.ComboBox CmbDay;
+        private System.Windows.Forms.Button BtnSalvar2;
     }
 }
