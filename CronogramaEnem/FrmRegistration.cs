@@ -10,7 +10,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CronogramaEnem;
 
+
+
 namespace CronogramaEnem
+
 {
     public partial class FrmRegistration : Form
     {
@@ -19,6 +22,7 @@ namespace CronogramaEnem
             InitializeComponent();
         }
 
+        
         private void BtnNext_Click(object sender, EventArgs e)
         {
             string connectionString = @"Server=sqlexpress;Database=CJ3028186PR2;User Id=aluno;Password=aluno;";
@@ -29,7 +33,7 @@ namespace CronogramaEnem
                 {
                     conn.Open();
 
-                    string query = "INSERT INTO Clientes (Nome, CPF, NumeroCelular, DataNascimento) VALUES (@Nome, @CPF, @Telefone, @DatadeNascimento)";
+                    string query = "INSERT INTO DadosClientes (Nome, CPF, NumeroCelular, DataNascimento) VALUES (@Nome, @CPF, @Telefone, @DatadeNascimento)";
 
                     SqlCommand cmd = new SqlCommand(query, conn);
 
@@ -38,6 +42,7 @@ namespace CronogramaEnem
                     cmd.Parameters.AddWithValue("@CPF", MtbCPF.Text);
                     cmd.Parameters.AddWithValue("@Telefone", MtbNumber.Text);
                     cmd.Parameters.AddWithValue("@DatadeNascimento", MtbBirth.Text);
+                    
 
                     int rowsAffected = cmd.ExecuteNonQuery();
 
@@ -58,8 +63,11 @@ namespace CronogramaEnem
 
 
 
+            
+
             FrmData frmData = new FrmData();
             frmData.ShowDialog();
+
         }
 
         

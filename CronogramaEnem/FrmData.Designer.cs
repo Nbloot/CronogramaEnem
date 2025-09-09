@@ -116,6 +116,7 @@
             this.BtnSalvar2.TabIndex = 19;
             this.BtnSalvar2.Text = "Salvar";
             this.BtnSalvar2.UseVisualStyleBackColor = true;
+            this.BtnSalvar2.Click += new System.EventHandler(this.BtnSalvar2_Click);
             // 
             // FrmData
             // 
