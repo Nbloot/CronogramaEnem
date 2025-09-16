@@ -26,7 +26,7 @@ namespace CronogramaEnem
         private void BtnNext_Click(object sender, EventArgs e)
         {
             string connectionString = @"Server=sqlexpress;Database=CJ3028186PR2;User Id=aluno;Password=aluno;";
-
+            int maxID = -1;
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 try
@@ -42,12 +42,28 @@ namespace CronogramaEnem
                     cmd.Parameters.AddWithValue("@CPF", MtbCPF.Text);
                     cmd.Parameters.AddWithValue("@Telefone", MtbNumber.Text);
                     cmd.Parameters.AddWithValue("@DatadeNascimento", MtbBirth.Text);
-                    
+
 
                     int rowsAffected = cmd.ExecuteNonQuery();
-
+                    
                     if (rowsAffected > 0)
                     {
+
+                        using (SqlConnection conn2 = new SqlConnection(connectionString))
+                        {
+                            conn2.Open();
+                            query = "SELECT MAX(ID) from DadosClientes";
+                            cmd = new SqlCommand(query, conn2);
+                            SqlDataReader reader = cmd.ExecuteReader();
+                            if (reader.HasRows)
+                            {
+                                while (reader.Read())
+                                {
+                                    maxID = reader.GetInt32(0);
+                                }
+                            }
+                            reader.Close();
+                        }
                         MessageBox.Show("Cliente salvo com sucesso!");
                     }
                     else
@@ -65,7 +81,7 @@ namespace CronogramaEnem
 
             
 
-            FrmData frmData = new FrmData();
+            FrmData frmData = new FrmData(maxID);
             frmData.ShowDialog();
 
         }

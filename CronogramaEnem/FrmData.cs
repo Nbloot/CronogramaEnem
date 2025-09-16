@@ -19,9 +19,12 @@ namespace CronogramaEnem
 
         public string clienteCPF { get; set; }
 
-        public FrmData()
+        private int maxID;
+
+        public FrmData(int maxID)
         {
             InitializeComponent();
+            this.maxID = maxID;
         }
 
         private void Pbx3_Click(object sender, EventArgs e)
@@ -44,6 +47,12 @@ namespace CronogramaEnem
 
         private void BtnSalvar2_Click(object sender, EventArgs e)
         {
+            if (maxID == -1)
+            {
+                MessageBox.Show("Erro ao cadastrar o cliente");
+                return;
+            }
+
             string connectionString = @"Server=sqlexpress;Database=CJ3028186PR2;User Id=aluno;Password=aluno;";
 
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -52,14 +61,15 @@ namespace CronogramaEnem
                 {
                     conn.Open();
 
-                    string query = "UPDATE DadosClientes SET Dias = @Dias , Ano = @Ano WHERE CPF = @CPF";
+                    string query = "UPDATE DadosClientes SET Dias = @Dias , Ano = @Ano WHERE ID = @ID";
 
                     SqlCommand cmd = new SqlCommand(query, conn);
 
                     // Adiciona os valores dos TextBox
                     cmd.Parameters.AddWithValue("@Ano", MtbYear.Text);
                     cmd.Parameters.AddWithValue("@Dias", CmbDay.Text);
-                    cmd.Parameters.AddWithValue("@CPF", clienteCPF);
+                    cmd.Parameters.AddWithValue("@ID", maxID);
+
 
 
                     int rowsAffected = cmd.ExecuteNonQuery();
@@ -75,7 +85,7 @@ namespace CronogramaEnem
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Erro ao salvar cliente: " + ex.Message);
+                    MessageBox.Show("Erro ao salvar cliente2: " + ex.Message);
                 }
             }
         }
