@@ -30,6 +30,7 @@
         {
             this.BtnStart = new System.Windows.Forms.Button();
             this.Pbx1 = new System.Windows.Forms.PictureBox();
+            this.BtnLogin = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Pbx1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -38,12 +39,12 @@
             this.BtnStart.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.BtnStart.BackColor = System.Drawing.Color.BlueViolet;
             this.BtnStart.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.BtnStart.Location = new System.Drawing.Point(491, 478);
+            this.BtnStart.Location = new System.Drawing.Point(418, 478);
             this.BtnStart.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnStart.Name = "BtnStart";
             this.BtnStart.Size = new System.Drawing.Size(100, 41);
             this.BtnStart.TabIndex = 0;
-            this.BtnStart.Text = "Começar";
+            this.BtnStart.Text = "Cadastro";
             this.BtnStart.UseVisualStyleBackColor = false;
             this.BtnStart.Click += new System.EventHandler(this.BtnStart_Click);
             // 
@@ -58,11 +59,26 @@
             this.Pbx1.TabStop = false;
             this.Pbx1.Click += new System.EventHandler(this.Pbx1_Click);
             // 
+            // BtnLogin
+            // 
+            this.BtnLogin.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.BtnLogin.BackColor = System.Drawing.Color.BlueViolet;
+            this.BtnLogin.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.BtnLogin.Location = new System.Drawing.Point(558, 478);
+            this.BtnLogin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnLogin.Name = "BtnLogin";
+            this.BtnLogin.Size = new System.Drawing.Size(100, 41);
+            this.BtnLogin.TabIndex = 2;
+            this.BtnLogin.Text = "Login";
+            this.BtnLogin.UseVisualStyleBackColor = false;
+            this.BtnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
+            // 
             // FrmStartScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1049, 631);
+            this.Controls.Add(this.BtnLogin);
             this.Controls.Add(this.BtnStart);
             this.Controls.Add(this.Pbx1);
             this.Font = new System.Drawing.Font("Reem Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -81,5 +97,6 @@
 
         private System.Windows.Forms.Button BtnStart;
         private System.Windows.Forms.PictureBox Pbx1;
+        private System.Windows.Forms.Button BtnLogin;
     }
 }
