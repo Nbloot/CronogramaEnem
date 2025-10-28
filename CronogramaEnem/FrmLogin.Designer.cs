@@ -31,7 +31,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Lbl5 = new System.Windows.Forms.Label();
-            this.MtbCPF1 = new System.Windows.Forms.MaskedTextBox();
+            this.BtnLogin2 = new System.Windows.Forms.Button();
+            this.MtbCPF2 = new System.Windows.Forms.MaskedTextBox();
+            this.BtnAdmin = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,26 +61,54 @@
             // 
             this.Lbl5.AutoSize = true;
             this.Lbl5.Font = new System.Drawing.Font("Reem Kufi", 9.75F);
-            this.Lbl5.Location = new System.Drawing.Point(70, 43);
+            this.Lbl5.Location = new System.Drawing.Point(55, 71);
             this.Lbl5.Name = "Lbl5";
             this.Lbl5.Size = new System.Drawing.Size(105, 23);
             this.Lbl5.TabIndex = 2;
             this.Lbl5.Text = "Digite o seu CPF:";
+            this.Lbl5.UseWaitCursor = true;
+            this.Lbl5.Click += new System.EventHandler(this.Lbl5_Click);
             // 
-            // MtbCPF1
+            // BtnLogin2
             // 
-            this.MtbCPF1.Location = new System.Drawing.Point(69, 96);
-            this.MtbCPF1.Mask = "000,000,000,00";
-            this.MtbCPF1.Name = "MtbCPF1";
-            this.MtbCPF1.Size = new System.Drawing.Size(100, 20);
-            this.MtbCPF1.TabIndex = 3;
+            this.BtnLogin2.BackColor = System.Drawing.SystemColors.Control;
+            this.BtnLogin2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.BtnLogin2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.BtnLogin2.Location = new System.Drawing.Point(682, 402);
+            this.BtnLogin2.Name = "BtnLogin2";
+            this.BtnLogin2.Size = new System.Drawing.Size(71, 23);
+            this.BtnLogin2.TabIndex = 6;
+            this.BtnLogin2.Text = "Login";
+            this.BtnLogin2.UseVisualStyleBackColor = false;
+            // 
+            // MtbCPF2
+            // 
+            this.MtbCPF2.Location = new System.Drawing.Point(55, 110);
+            this.MtbCPF2.Mask = "000,000,000-00";
+            this.MtbCPF2.Name = "MtbCPF2";
+            this.MtbCPF2.Size = new System.Drawing.Size(105, 20);
+            this.MtbCPF2.TabIndex = 7;
+            // 
+            // BtnAdmin
+            // 
+            this.BtnAdmin.BackColor = System.Drawing.SystemColors.Control;
+            this.BtnAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.BtnAdmin.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.BtnAdmin.Location = new System.Drawing.Point(45, 402);
+            this.BtnAdmin.Name = "BtnAdmin";
+            this.BtnAdmin.Size = new System.Drawing.Size(91, 23);
+            this.BtnAdmin.TabIndex = 8;
+            this.BtnAdmin.Text = "Administração";
+            this.BtnAdmin.UseVisualStyleBackColor = false;
             // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.MtbCPF1);
+            this.Controls.Add(this.BtnAdmin);
+            this.Controls.Add(this.MtbCPF2);
+            this.Controls.Add(this.BtnLogin2);
             this.Controls.Add(this.Lbl5);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
@@ -95,6 +125,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label Lbl5;
-        private System.Windows.Forms.MaskedTextBox MtbCPF1;
+        private System.Windows.Forms.Button BtnLogin2;
+        private System.Windows.Forms.MaskedTextBox MtbCPF2;
+        private System.Windows.Forms.Button BtnAdmin;
     }
 }

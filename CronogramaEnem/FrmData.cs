@@ -87,6 +87,8 @@ namespace CronogramaEnem
                 {
                     MessageBox.Show("Erro ao salvar cliente2: " + ex.Message);
                 }
+                FrmSubject frmSubject = new FrmSubject();
+                frmSubject.ShowDialog();
             }
         }
     }

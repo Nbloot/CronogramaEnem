@@ -70,6 +70,12 @@
     <Compile Include="FrmStartScreen.Designer.cs">
       <DependentUpon>FrmStartScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmSubject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSubject.Designer.cs">
+      <DependentUpon>FrmSubject.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmData.resx">
@@ -83,6 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmStartScreen.resx">
       <DependentUpon>FrmStartScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSubject.resx">
+      <DependentUpon>FrmSubject.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
