@@ -80,6 +80,8 @@
             this.BtnLogin2.TabIndex = 6;
             this.BtnLogin2.Text = "Login";
             this.BtnLogin2.UseVisualStyleBackColor = false;
+            this.BtnLogin2.UseWaitCursor = true;
+            this.BtnLogin2.Click += new System.EventHandler(this.BtnLogin2_Click);
             // 
             // MtbCPF2
             // 
@@ -88,6 +90,7 @@
             this.MtbCPF2.Name = "MtbCPF2";
             this.MtbCPF2.Size = new System.Drawing.Size(105, 20);
             this.MtbCPF2.TabIndex = 7;
+            this.MtbCPF2.UseWaitCursor = true;
             // 
             // BtnAdmin
             // 
@@ -100,6 +103,7 @@
             this.BtnAdmin.TabIndex = 8;
             this.BtnAdmin.Text = "Administração";
             this.BtnAdmin.UseVisualStyleBackColor = false;
+            this.BtnAdmin.UseWaitCursor = true;
             // 
             // FrmLogin
             // 

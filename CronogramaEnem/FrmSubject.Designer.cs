@@ -91,7 +91,7 @@
             this.clbSubAreas.FormattingEnabled = true;
             this.clbSubAreas.Location = new System.Drawing.Point(289, 228);
             this.clbSubAreas.Name = "clbSubAreas";
-            this.clbSubAreas.Size = new System.Drawing.Size(120, 79);
+            this.clbSubAreas.Size = new System.Drawing.Size(154, 79);
             this.clbSubAreas.TabIndex = 18;
             this.clbSubAreas.Visible = false;
             // 
